@@ -1,4 +1,3 @@
-import time
 from socket import *
 import tkinter as tk
 import threading
@@ -11,6 +10,7 @@ s.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
 PORT = 37020
 
 network = '<broadcast>'
+
 s.sendto('Client broadcast message!'.encode('utf-8'), (network, PORT))
 
 
@@ -36,6 +36,7 @@ def start_server():
 
 def finish():
     win.destroy()
+
 
 new_thread = threading.Thread(target=start_server)
 new_thread.start()
